@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sign up page</title>
+<link rel="stylesheet" type="text/css" href="theme.css">
+</head>
+<body class="login"> 
+<img src="https://i.ibb.co/cXqhQDx/logo.jpg" alt="logo" border="0" height="80" width="250">
+<ul class="top"> 	
+<li class="top"> <a class="top" href="signin.html"> LOGIN  </a> </li>
+</ul>
+<br><br>
+<div style="font-family: verdana; font-style: italic; color: white; font-size: 22px; text-shadow: 2px 2px 4px #000000; "> 
+<strong> Your One Stop Destination To A Healthy Lifestyle </strong> </div>
+<br>
+
+
+<ul class="mid">
+	<li class="mid"> <a class="mid" href="About.html"> About </a> </li>
+	<li class="mid"> <a class="mid" href="Help.html">  Help </a> </li>
+	<li class="mid"> <a class="mid" href="contactus.html"> Contact Us </a> </li>
+</ul>
+<br>
+<br>
+<br>
+<br>
+
+
+<img class="imageSlides" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyRUhOnq6-0f-1LkZMjGnDoNpZ5r4UpsNUdoitVii3WYU-_WFMaw" style="width: 40%; float: right;">
+<img class="imageSlides" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE-cDDO_FHj5bzi6gW4MgkAc4jxz0-vc5YzXP5ZPc_WxxywZsx" style="width: 40%; float:right;">
+<img class="imageSlides" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGmzgjMVmNu9zWtR3fYCMyIzv1Fll9GS-wIlr2ydc1RjBQdH4_" style="width: 40%; float:right;">
+</section>
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+var i;
+var x = document.getElementsByClassName("imageSlides");
+for (i = 0; i < x.length; i++) {
+x[i].style.display = "none";
+}
+myIndex++;
+if (myIndex > x.length) {myIndex = 1}
+x[myIndex-1].style.display = "block";
+setTimeout(carousel, 3000);
+}
+</script>
+
+<div class="polaroid">
+<form method = "post" action="Register.php">
+<pre> <div style="font-family: comic sans ms">Sign up now!</div> 
+
+First name:     <input size=20 type="text" name="FirstName" required>
+
+Last name:	<input size=20 type="text" name="LastName" required>
+
+Email Id:	<input size=20 type="Email" name="Email" required>
+
+Country:	<input size=20 type="text" name="country" required>
+
+Phone No.:	<input size=10 type="Phone" name="Phone" pattern="[0-9]{10}" required>
+
+Username:	<input size=15 type="text" name="username" required>
+
+Password:	<input size=20 type="Password" name="Password" required>
+
+<p align="center">
+<i>Enter a security question and an answer to it.</i>
+
+<textarea name="Security" rows="3" cols="50" placeholder=" Enter your security question here. " required></textarea>
+
+Answer:	<input size=20 type="text" name="Answer" required>
+</p>
+<input type="Submit" value="Submit" id="Search">
+<br>
+<br>
+
+</div>
+</form>
+</pre>
+<br>
+<br>
+</body>
+</html>

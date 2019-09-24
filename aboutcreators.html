@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" href="https://i.ibb.co/4JBpHSK/Capture.png" type="image/x-icon">
+<title>DietGuru creators</title>
+<style>
+body {
+    padding: 0;
+    margin-left: 40px;
+	margin-right: 40px;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+}
+.container {
+    width: 900px;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    grid-template-rows: repeat(2,275px);
+}
+.box {
+    position: relative;
+    perspective: 1000px;
+    cursor: pointer
+}
+#box_1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+#box_2 {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+}
+#box_3 {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3
+}
+.profile_photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 20px auto;
+    margin-bottom: -5px
+	background-position: center;
+    background-size: cover;
+}
+.job {
+    text-align: center;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+}
+h3 {
+    text-align: center;
+    margin-bottom: 5px;
+    font-family: verdana;
+    font-size: 20px;
+}
+.p1 {
+    background-image: url("manali.png");
+}
+.p2 {
+    background-image: url("riddhi.png");
+}
+.p3 {
+    background-image: url("athmika.png");
+}
+.back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    transform: rotateX(-180deg);
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    text-align: center;
+    font-family: comic sans ms;
+    width: 300px;
+    height: 275px;
+    transition: .5s;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+
+}
+.front {
+    width: 300px;
+    height: 275px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 35px;
+    transform: rotate(0);
+    transition: .5s;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+    background: #fff;
+}
+.box.active > .back {
+    transform: rotateX(0deg) ;
+    top:0;
+    left: 0;
+    z-index: 99;
+}
+.box.active > .front {
+    transform: rotateX(-180deg);
+}
+.front:hover {
+    z-index: 99;
+    border: none;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+.back h3{
+    margin-top: 20px;
+}
+.back p {
+    width: 250px;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    margin: 10px auto 5px auto;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+    border-top: 2px solid rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 900px) {
+    .container {
+        top:200px;
+        width: 600px;
+        grid-template-columns: repeat(2, 300px);
+        grid-template-rows: repeat(3,275px);
+    }
+    #box_1 {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
+    #box_2 {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+
+    #box_3 {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3
+    }
+
+}
+@media (max-width: 600px) {
+    .container {
+        margin-top: 900px;
+        width: 300px;
+        grid-template-columns: repeat(1, 300px);
+        grid-template-rows: repeat(6,275px);
+    }
+    #box_1 {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
+    #box_2 {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+
+    #box_3 {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+
+}
+a.top:link, a.top:visited
+{
+	background-color: #ffffff;
+	display: inline;
+	font-size: 15px;
+	font-style: bold;
+	color: #0E1241;
+	text-decoration:none;
+	padding: 10px 15px;
+	border-radius: 30px;
+	display: inline;
+	float: right;
+	margin: 10px;
+}
+a.top:hover, a.top:active
+{
+	background-color: #0E1241;
+	color:  #ffffff;
+	display: inline;
+}
+ul.top
+{
+	display: inline;
+	text-decoration: none;
+	font-family: cursive;
+	font-style: bold;
+	text-align:right;
+}
+ul.mid
+{
+	text-align: left; 
+	display: inline;
+	text-decoration: none;
+}
+li.top
+{
+	display: inline;
+	text-decoration: none;
+	text-align: right;
+	margin: 10px;
+}
+li.mid
+{
+	display:inline;	
+	text-decoration: none;
+	text-align: left;
+	text-indent: none;
+}
+a.mid:link, a.mid:visited
+{
+	display: inline;
+	background-color: #ffffff;
+	font-size: 25px;
+	font-style: bold;
+	color: black;
+	text-decoration: none;
+	padding: 10px 15px;
+	font-family: comic sans ms;
+	text-align: left;
+	float: left;
+	margin: 2px;
+}
+a.mid:hover, a.mid:active
+{
+	background-color: #0E1241;
+	color:  #ffffff;
+	text-align: left;
+	text-decoration: none;
+	display: inline;
+}
+</style>
+</head>
+<body>
+<ul class="top"> 	
+<li class="top"><a class="top" href="signup.html"> SIGN UP  </a> </li>
+<li class="top"> <a class="top" href="signin.html"> LOGIN  </a> </li>
+</ul> 
+<div style="font-family: comic sans ms; font-style: italic; color: green; font-size: 40px; text-shadow: 1px 1px 2px #000000;">
+<img src="https://i.ibb.co/4JBpHSK/Capture.png" alt="logo" border="0" height="70" width="65"> DietGuru </div>
+<br><br><br>
+<div style="font-family: verdana; font-style: italic; color: #6B5B95; font-size: 26px; text-shadow: 1px 1px 2px #ffafff; "> <strong> Your One Stop Destination To A Healthy Lifestyle </strong> </div>
+<br>
+<ul class="mid">
+	<li class="mid"> <a class="mid" href="Homepage.html"> Home </a> </li>
+	<li class="mid"> <a class="mid" href="About.html"> About </a> </li>
+	<li class="mid"> <a class="mid" href="Help.html">  Help </a> </li>
+	<li class="mid"> <a class="mid" href="contactus.html"> Contact Us </a> </li>
+</ul>
+<br>
+<div class="container" style="align: center;">
+
+	<div class="box" id="box_1">
+		<div class="front" onclick="frontFunction()">
+			<div class="profile_photo p1"></div>
+			<h3 class="full_name">Manali Bagwe</h3>
+			<div class="job">Co-founder and brand designer</div>
+		</div>
+		<div class="back" onclick="backFunction()">
+			<h3>Manali Bagwe</h3>
+			<p class="info">
+                Manali is a sincere student studying computer engineering in third year with a profound interest in database systems and web development. 
+                She is a deep thinker and a very creative individual with a deep love for art.
+			</p>
+		</div>
+	</div>
+
+	<div class="box" id="box_2">
+		<div class="front" onclick="frontFunction()">
+			<div class="profile_photo p2"></div>
+			<h3 class="full_name">Riddhi Doshi</h3>
+			<div class="job">Co-founder</div>
+		</div>
+		<div class="back" onclick="backFunction()">
+			<h3>Riddhi Doshi</h3>
+			<p class="info">
+                Riddhi likes programming and developing strategies. 
+                A third year computer engineering student with an aptness in web designing, Riddhi strives to provide easy solutions to complex problems with her skilfulness.
+
+			</p>
+		</div>
+	</div>
+
+	<div class="box" id="box_3">
+		<div class="front" onclick="frontFunction()">
+			<div class="profile_photo p3"></div>
+			<h3 class="full_name">Athmika Hebbar</h3>
+			<div class="job">Co-founder</div>
+		</div>
+		<div class="back" onclick="backFunction()">
+		<h3>Athmika Hebbar</h3>
+			<p class="info">
+                Athmika is a third year computer engineering student who has a keen interest in web designing and app development.
+                 In addition to this she is a logophile at heart and loves writing.
+
+			</p>
+		</div>
+	</div>
+</div>
+
+<script>
+    let box = document.querySelectorAll(".box");
+	function frontFunction() {
+		box.forEach(x => x.addEventListener("click", function () {
+			this.classList.add("active"); }));
+	}
+	function backFunction() {
+		box.forEach(x => x.addEventListener("click", function () {
+		this.classList.remove("active"); }));
+	}
+</script>
+</body>
+</html>

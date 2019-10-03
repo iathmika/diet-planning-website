@@ -1,19 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title> Sign up </title>
-<meta http-equiv="refresh" content="1; url=Homepage.html">
-<link rel="stylesheet" type="text/css" href="theme.css">
-<head>
-
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "DietGuru";
-
+include("config.php");
+session_start();
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($host, $username, $password, $dbname);
 
 // Check connection
 if ($conn->connect_error) {
@@ -33,11 +22,17 @@ $Answer = $_POST["Answer"];
 $sql = "INSERT INTO userdetails VALUES ('$FirstName','$LastName','$Email','$country','$Phone','$username','$Password','$Security','$Answer')";
 if ($conn->query($sql) === TRUE) {
     echo "Sign in successful!";
+	header("location: loginhome.php");
 } else {
 	echo "Error: " . $conn->error;
 }
 ?>
+<html>
+<head>
+<title> Sign up </title>
+<meta http-equiv="refresh" content="1; url=Homepage.html">
+<link rel="stylesheet" type="text/css" href="theme.css">
+<head>
 <br>
-
 </body>
 </html>

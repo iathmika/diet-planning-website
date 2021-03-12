@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <html>
 <head>
 <title>Sign in page</title>
@@ -11,7 +14,7 @@
 <strong> Your One Stop Destination To A Healthy Lifestyle </strong> </div>
 <br>
 <ul class="mid">
-	<li class="mid"> <a class="mid" href="About.html"> About </a> </li>
+	<li class="mid"> <a class="mid" href="About.php"> About </a> </li>
 	<li class="mid"> <a class="mid" href="Help.html">  Help </a> </li>
 	<li class="mid"> <a class="mid" href="contactus.html"> Contact Us </a> </li>
 </ul>
@@ -22,7 +25,7 @@
 
 <pre>
 <div class="polaroid">
-<form enctype="multiple/form-data" action="Login.php" method = "post">
+<form enctype="multiple/form-data" action="logindone.php" method = "post">
 Username:   <input size=10 type="text" name="Username" required>
 
 Password:   <input size=10 type="Password" name="Password" required><br>

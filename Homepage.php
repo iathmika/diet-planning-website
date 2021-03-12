@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +20,7 @@
 <br>
 <ul class="mid">
 	<li class="mid"> <a class="mid" href="Homepage.html" style="border-style: solid; border-width: 1px 1px 1px 1px; background-color: #ffffff; color:  #000000;"> Home </a> </li>
-	<li class="mid"> <a class="mid" href="About.html"> About </a> </li>
+	<li class="mid"> <a class="mid" href="About.php"> About </a> </li>
 	<li class="mid"> <a class="mid" href="Help.html">  Help </a> </li>
 	<li class="mid"> <a class="mid" href="contactus.html"> Contact Us </a> </li>
 </ul>
